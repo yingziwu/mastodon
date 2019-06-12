@@ -482,7 +482,6 @@ pt:
     warning: Cuidado com estes dados. Não partilhar com ninguém!
     your_token: O teu token de acesso
   auth:
-    agreement_html: Registando-te concordas em seguir <a href="%{rules_path}">as regras da instância</a> e <a href="%{terms_path}">os nossos termos de serviço</a>.
     change_password: Palavra-passe
     confirm_email: Confirmar e-mail
     delete_account: Eliminar conta
@@ -719,10 +718,7 @@ pt:
       too_few_options: tem de ter mais do que um item
       too_many_options: não pode conter mais do que %{max} itens
   preferences:
-    languages: Idiomas
     other: Outro
-    publishing: Publicação
-    web: Web
   remote_follow:
     acct: Entre seu usuário@domínio do qual quer seguir
     missing_resource: Não foi possível achar a URL de redirecionamento para sua conta
@@ -801,9 +797,7 @@ pt:
     migrate: Migração de conta
     notifications: Notificações
     preferences: Preferências
-    settings: Configurações
     two_factor_authentication: Autenticação em dois passos
-    your_apps: As tuas aplicações
   statuses:
     attached:
       description: 'Anexadas: %{attached}'

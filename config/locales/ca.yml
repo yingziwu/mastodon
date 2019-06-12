@@ -68,6 +68,7 @@ ca:
       admin: Administrador
       bot: Bot
       moderator: Moderador
+    unavailable: Perfil inaccessible
     unfollow: Deixa de seguir
   admin:
     account_actions:
@@ -80,6 +81,7 @@ ca:
       destroyed_msg: Nota de moderació destruïda amb èxit!
     accounts:
       approve: Aprova
+      approve_all: Aprova'ls tots
       are_you_sure: N'estàs segur?
       avatar: Avatar
       by_domain: Domini
@@ -132,6 +134,7 @@ ca:
       moderation_notes: Notes de moderació
       most_recent_activity: Activitat més recent
       most_recent_ip: IP més recent
+      no_account_selected: No s'han canviat els comptes perque no s'han seleccionat
       no_limits_imposed: Sense límits imposats
       not_subscribed: No subscrit
       outbox_url: URL de la bústia de sortida
@@ -144,12 +147,13 @@ ca:
       push_subscription_expires: La subscripció PuSH expira
       redownload: Actualitza el perfil
       reject: Rebutja
+      reject_all: Rebutja'ls tots
       remove_avatar: Eliminar avatar
       remove_header: Treu la capçalera
       resend_confirmation:
-        already_confirmed: Este usuario ya está confirmado
+        already_confirmed: Aquest usuari ja està confirmat
         send: Reenviar el correu electrònic de confirmació
-        success: "¡Correo electrónico de confirmación enviado con éxito!"
+        success: Correu electrònic de confirmació enviat amb èxit!
       reset: Reinicialitza
       reset_password: Restableix la contrasenya
       resubscribe: Torna a subscriure
@@ -170,6 +174,7 @@ ca:
       statuses: Estats
       subscribe: Subscriu
       suspended: Suspès
+      time_in_queue: Esperant en la cua %{time}
       title: Comptes
       unconfirmed_email: Correu electrònic sense confirmar
       undo_silenced: Deixa de silenciar
@@ -245,6 +250,7 @@ ca:
       feature_profile_directory: Directori de perfils
       feature_registrations: Registres
       feature_relay: Relay de la Federació
+      feature_timeline_preview: Vista previa de línia de temps
       features: Característiques
       hidden_service: Federació amb serveis ocults
       open_reports: informes oberts
@@ -264,6 +270,7 @@ ca:
       created_msg: El bloqueig de domini ara s'està processant
       destroyed_msg: El bloqueig de domini s'ha desfet
       domain: Domini
+      existing_domain_block_html: Ja has imposat uns limits més estrictes a %{name}, l'hauries de <a href="%{unblock_url}">desbloquejar-lo</a> primer.
       new:
         create: Crea un bloqueig
         hint: El bloqueig de domini no impedirà la creació de nous comptes en la base de dades, però s'aplicaran de manera retroactiva mètodes de moderació específics sobre aquests comptes.
@@ -293,7 +300,7 @@ ca:
         undo: Desfés
       undo: Desfés el bloqueig del domini
     email_domain_blocks:
-      add_new: Afegeix
+      add_new: Afegir nou
       created_msg: S'ha creat el bloc de domini de correu electrònic
       delete: Suprimeix
       destroyed_msg: S'ha eliminat correctament el bloc del domini de correu
@@ -316,10 +323,10 @@ ca:
         limited: Limitades
         title: Moderació
       title: Federació
-      total_blocked_by_us: Bloquejades per nosaltres
-      total_followed_by_them: Seguides per ells
-      total_followed_by_us: Seguides per nosaltres
-      total_reported: Informes sobre elles
+      total_blocked_by_us: Bloquejats per nosaltres
+      total_followed_by_them: Seguits per ells
+      total_followed_by_us: Seguits per nosaltres
+      total_reported: Informes sobre ells
       total_storage: Adjunts multimèdia
     invites:
       deactivate_all: Desactiva-ho tot
@@ -329,6 +336,8 @@ ca:
         expired: Caducat
         title: Filtre
       title: Convida
+    pending_accounts:
+      title: Comptes pendents (%{count})
     relays:
       add_new: Afegiu un nou relay
       delete: Esborra
@@ -336,7 +345,7 @@ ca:
       disable: Inhabilita
       disabled: Desactivat
       enable: Activat
-      enable_hint: Una vegada habilitat, el teu servidor es subscriurà a tots els toots públics d'aquest relay i començarà a enviar-hi tots els toots públics d'aquest servidor.
+      enable_hint: Una vegada habilitat el teu servidor es subscriurà a tots els toots públics d'aquest relay i començarà a enviar-hi tots els toots públics d'aquest servidor.
       enabled: Activat
       inbox_url: URL del Relay
       pending: S'està esperant l'aprovació del relay
@@ -385,7 +394,7 @@ ca:
         desc_html: Separa diversos noms d'usuari amb comes. Només funcionaran els comptes locals i desblocats. El valor predeterminat quan està buit és tots els administradors locals.
         title: El seguiment per defecte per als usuaris nous
       contact_information:
-        email: Introdueix una adreça de correu electrònic píblica
+        email: Introdueix una adreça de correu electrònic pública
         username: Nom d'usuari del contacte
       custom_css:
         desc_html: Modifica l'aspecte amb CSS carregat a cada pàgina
@@ -490,6 +499,12 @@ ca:
       body: "%{reporter} ha informat de %{target}"
       body_remote: Algú des de el domini %{domain} ha informat sobre %{target}
       subject: Informe nou per a %{instance} (#%{id})
+  appearance:
+    advanced_web_interface: Interfície web avançada
+    advanced_web_interface_hint: 'Si vols fer ús de tota l''amplada de la teva pantalla, l''interfície web avançada et permet configurar diverses columnes per a veure molta més informació al mateix temps: Inici, notificacions, línia de temps federada i qualsevol número de llistes i etiquetes.'
+    animations_and_accessibility: Animacions i accessibilitat
+    confirmation_dialogs: Diàlegs de confirmació
+    sensitive_content: Contingut sensible
   application_mailer:
     notification_preferences: Canvia les preferències de correu
     salutation: "%{name},"
@@ -506,7 +521,6 @@ ca:
     warning: Aneu amb compte amb aquestes dades. No les compartiu mai amb ningú!
     your_token: El teu identificador d'accés
   auth:
-    agreement_html: Al fer clic en "Registre" acceptes respectar <a href="%{rules_path}">les normes del servidor</a> i <a href="%{terms_path}">els nostres termes del servei</a>.
     apply_for_account: Demana una invitació
     change_password: Contrasenya
     checkbox_agreement_html: Estic d'acord amb les <a href="%{rules_path}" target="_blank">normes del servidor</a> i <a href="%{terms_path}" target="_blank"> els termes del servei</a>
@@ -586,6 +600,9 @@ ca:
       content: Ho sentim, però alguna cosa ha fallat a la nostra banda.
       title: Aquesta pàgina no es correcta
     noscript_html: Per a utilitzar Mastodon, activa el JavaScript. També pots provar una de les <a href="%{apps_path}"> aplicacions natives</a> de Mastodon per a la vostra plataforma.
+  existing_username_validator:
+    not_found: no s'ha pogut trobar cap usuari local amb aquest nom d'usuari
+    not_found_multiple: no s'ha pogut trobar %{usernames}
   exports:
     archive_takeout:
       date: Data
@@ -629,10 +646,31 @@ ca:
     all: Tot
     changes_saved_msg: Els canvis s'han desat correctament!
     copy: Copia
+    order_by: Ordena per
     save_changes: Desa els canvis
     validation_errors:
       one: Alguna cosa no va bé! Si us plau, revisa l'error
       other: Alguna cosa no va bé! Si us plau, revisa %{count} errors més a baix
+  html_validator:
+    invalid_markup: 'conté HTML markup no vàlid: %{error}'
+  identity_proofs:
+    active: Actiu
+    authorize: Sí, autoritza
+    authorize_connection_prompt: Autoritzar aquesta connexió criptogràfica?
+    errors:
+      failed: Ha fallat la connexió criptogràfica. Torna-ho a provar des de %{provider}.
+      keybase:
+        invalid_token: Els tokens de Keybase són hashs de signatures i han de tenir 66 caràcters hexadecimals
+        verification_failed: Keybase no reconeix aquest token com a signatura del usuari de Keybase %{kb_username}. Si us plau prova des de Keybase.
+      wrong_user: No es pot crear una prova per a %{proving} mentre es connectava com a %{current}. Inicia sessió com a %{proving} i prova de nou.
+    explanation_html: Aquí pots connectar criptogràficament les teves altres identitats com ara el teu perfil de Keybase. Això permet que altres persones t'envïin missatges xifrats i confiar en el contingut que els hi envies.
+    i_am_html: Sóc %{username} a %{service}.
+    identity: Identitat
+    inactive: Inactiu
+    publicize_checkbox: 'I tooteja això:'
+    publicize_toot: 'Està provat! Sóc %{username} a %{service}: %{url}'
+    status: Estat de verificació
+    view_proof: Veure la prova
   imports:
     modes:
       merge: Fusionar
@@ -645,7 +683,7 @@ ca:
       blocking: Llista de blocats
       domain_blocking: Llistat de dominis bloquejats
       following: Llista de seguits
-      muting: Llista d'apagats
+      muting: Llista de silenciats
     upload: Carregar
   in_memoriam_html: En Memòria.
   invites:
@@ -746,13 +784,14 @@ ca:
       too_few_options: ha de tenir més d'una opció
       too_many_options: no pot contenir més de %{max} opcions
   preferences:
-    languages: Llengues
     other: Altre
-    publishing: Publicació
-    web: Web
+    posting_defaults: Valors predeterminats de publicació
+    public_timelines: Línies de temps públiques
   relationships:
     activity: Activitat del compte
     dormant: Inactiu
+    last_active: Darrer actiu
+    most_recent: Més recent
     moved: Mogut
     mutual: Mútua
     primary: Primari
@@ -828,21 +867,25 @@ ca:
     revoke_success: S'ha revocat la sessió amb èxit
     title: Sessions
   settings:
+    account: Compte
+    account_settings: Ajustos del compte
+    appearance: Aparènça
     authorized_apps: Aplicacions autoritzades
-    back: Torna a l'inici
+    back: Torna a Mastodon
     delete: Eliminació del compte
     development: Desenvolupament
     edit_profile: Editar perfil
-    export: Exportar informació
+    export: Exportar dades
     featured_tags: Etiquetes destacades
+    identity_proofs: Proves d'identitat
     import: Importar
+    import_and_export: Importar i exportar
     migrate: Migració del compte
     notifications: Notificacions
     preferences: Preferències
+    profile: Perfil
     relationships: Seguits i seguidors
-    settings: Configuració
     two_factor_authentication: Autenticació de dos factors
-    your_apps: Les teves aplicacions
   statuses:
     attached:
       description: 'Adjunt: %{attached}'
@@ -862,7 +905,7 @@ ca:
     over_character_limit: Límit de caràcters de %{max} superat
     pin_errors:
       limit: Ja has fixat el màxim nombre de toots
-      ownership: El toot d'algú altre no es pot fixar
+      ownership: No es pot fixar el toot d'algú altre
       private: No es pot fixar el toot no públic
       reblog: No es pot fixar un impuls
     poll:
@@ -886,7 +929,7 @@ ca:
     sensitive_content: Contingut sensible
   terms:
     body_html: |
-      <h2>Privacy Policy</h2>
+      <h2>Política de Privacitat</h2>
       <h3 id="collect">Quina informació recollim?</h3>
 
       <ul>
@@ -1015,7 +1058,7 @@ ca:
     welcome:
       edit_profile_action: Configurar perfil
       edit_profile_step: Pots personalitzar el teu perfil penjant un avatar, un encapçalament, canviant el teu nom de visualització i molt més. Si prefereixes revisar els seguidors nous abans de que et puguin seguir, pots blocar el teu compte.
-      explanation: Aquests són alguns consells per començar
+      explanation: Aquests són alguns consells per a començar
       final_action: Comença a publicar
       final_step: 'Comença a publicar! Fins i tot sense seguidors, els altres poden veure els teus missatges públics, per exemple, a la línia de temps local i a les etiquetes ("hashtags"). És possible que vulguis presentar-te amb l''etiqueta #introductions.'
       full_handle: El teu nom d'usuari sencer

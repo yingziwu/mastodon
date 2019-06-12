@@ -23,7 +23,7 @@ cs:
     federation_hint_html: S účtem na %{instance} můžete sledovat lidi na jakémkoliv serveru Mastodon a jiných službách.
     generic_description: "%{domain} je jedním ze serverů v síti"
     get_apps: Vyzkoušejte mobilní aplikaci
-    hosted_on: Server Mastodon na adrese %{domain}
+    hosted_on: Mastodon na adrese %{domain}
     learn_more: Zjistit více
     privacy_policy: Zásady soukromí
     see_whats_happening: Podívejte se, co se děje
@@ -72,6 +72,7 @@ cs:
       admin: Administrátor
       bot: Robot
       moderator: Moderátor
+    unavailable: Profil nedostupný
     unfollow: Přestat sledovat
   admin:
     account_actions:
@@ -84,6 +85,7 @@ cs:
       destroyed_msg: Moderátorská poznámka byla úspěšně zničena!
     accounts:
       approve: Schválit
+      approve_all: Schválit vše
       are_you_sure: Jste si jistý/á?
       avatar: Avatar
       by_domain: Doména
@@ -136,6 +138,7 @@ cs:
       moderation_notes: Moderátorské poznámky
       most_recent_activity: Nejnovější aktivita
       most_recent_ip: Nejnovější IP
+      no_account_selected: Nebyl změněn žádný účet, neboť žádný nebyl zvolen
       no_limits_imposed: Nejsou nastavena žádná omezení
       not_subscribed: Neodebírá
       outbox_url: URL odchozí schránky
@@ -148,6 +151,7 @@ cs:
       push_subscription_expires: Odebírání PuSH expiruje
       redownload: Obnovit profil
       reject: Zamítnout
+      reject_all: Zamítnout vše
       remove_avatar: Odstranit avatar
       remove_header: Odstranit záhlaví
       resend_confirmation:
@@ -174,6 +178,7 @@ cs:
       statuses: Tooty
       subscribe: Odebírat
       suspended: Pozastaven/a
+      time_in_queue: Čeká ve frontě %{time}
       title: Účty
       unconfirmed_email: Nepotvrzený e-mail
       undo_silenced: Zrušit utišení
@@ -196,7 +201,7 @@ cs:
         destroy_domain_block: "%{name} odblokoval/a doménu %{target}"
         destroy_email_domain_block: "%{name} odebral/a e-mailovou doménu %{target} z černé listiny"
         destroy_status: "%{name} odstranil/a toot uživatele %{target}"
-        disable_2fa_user: "%{name} vypnul/a požadavek pro dvoufaktorovou autentikaci pro uživatele %{target}"
+        disable_2fa_user: "%{name} vypnul/a dvoufázové ověřování pro uživatele %{target}"
         disable_custom_emoji: "%{name} zakázal/a emoji %{target}"
         disable_user: "%{name} zakázal/a přihlašování pro uživatele %{target}"
         enable_custom_emoji: "%{name} povolil/a emoji %{target}"
@@ -249,6 +254,7 @@ cs:
       feature_profile_directory: Adresář profilů
       feature_registrations: Registrace
       feature_relay: Federovací most
+      feature_timeline_preview: Náhled časové osy
       features: Vlastnosti
       hidden_service: Federace se skrytými službami
       open_reports: otevřená hlášení
@@ -268,6 +274,7 @@ cs:
       created_msg: Blokace domény se právě vyřizuje
       destroyed_msg: Blokace domény byla zrušena
       domain: Doména
+      existing_domain_block_html: Pro účet %{name} jste již nastavil/a přísnější omezení, musíte jej nejdříve <a href="%{unblock_url}">odblokovat</a>.
       new:
         create: Vytvořit blokaci
         hint: Blokace domény nezakáže vytváření záznamů účtů v databázi, ale bude na tyto účty zpětně a automaticky aplikovat specifické metody moderování.
@@ -292,8 +299,8 @@ cs:
           one: Jeden účet v databázi byl ovlivněn
           other: "%{count} účtů v databázi bylo ovlivněno"
         retroactive:
-          silence: Odtišit všechny existující účty z této domény
-          suspend: Zrušit pozastavení všech existujících účtů z této domény
+          silence: Odtišit existující ovlivněné účty z této domény
+          suspend: Zrušit pozastavení existujících ovlivněných účtů z této domény
         title: Zrušit blokaci domény %{domain}
         undo: Odvolat
       undo: Odvolat blokaci domény
@@ -335,6 +342,8 @@ cs:
         expired: Vypršelé
         title: Filtrovat
       title: Pozvánky
+    pending_accounts:
+      title: Čekající účty (%{count})
     relays:
       add_new: Přidat nový most
       delete: Smazat
@@ -496,6 +505,12 @@ cs:
       body: "%{reporter} nahlásil/a uživatele %{target}"
       body_remote: Někdo z %{domain} nahlásil uživatele %{target}
       subject: Nové nahlášení pro %{instance} (#%{id})
+  appearance:
+    advanced_web_interface: Pokročilé webové rozhraní
+    advanced_web_interface_hint: 'Chcete-li využít celé šířky vaší obrazovky, dovolí vám pokročilé webové rozhraní nastavit si mnoho různých sloupců, takže můžete vidět ve stejnou chvíli tolik informací, kolik chcete: domovskou časovou osu, oznámení, federovanou časovou osu a libovolný počet seznamů a hashtagů.'
+    animations_and_accessibility: Animace a přístupnost
+    confirmation_dialogs: Potvrzovací dialogy
+    sensitive_content: Citlivý obsah
   application_mailer:
     notification_preferences: Změnit volby e-mailu
     salutation: "%{name},"
@@ -512,7 +527,6 @@ cs:
     warning: Buďte s těmito daty velmi opatrní. Nikdy je s nikým nesdílejte!
     your_token: Váš přístupový token
   auth:
-    agreement_html: Kliknutím na tlačítko „Registrovat“ souhlasíte s následováním <a href="%{rules_path}">pravidel tohoto serveru</a> a <a href="%{terms_path}">našich podmínek používání</a>.
     apply_for_account: Vyžádat si pozvánku
     change_password: Heslo
     checkbox_agreement_html: Souhlasím s <a href="%{rules_path}" target="_blank">pravidly serveru</a> a <a href="%{terms_path}" target="_blank">podmínkami používání</a>
@@ -639,6 +653,7 @@ cs:
     all: Všechny
     changes_saved_msg: Změny byly úspěšně uloženy!
     copy: Kopírovat
+    order_by: Seřadit od
     save_changes: Uložit změny
     validation_errors:
       few: Něco ještě není úplně v pořádku! Prosím zkontrolujte %{count} chyby níže
@@ -649,16 +664,19 @@ cs:
   identity_proofs:
     active: Aktivní
     authorize: Ano, autorizovat
-    authorize_connection_prompt: Autorizovat tohle kryptografické spojení?
+    authorize_connection_prompt: Autorizovat toto kryptografické spojení?
     errors:
       failed: Kryptografické spojení selhalo. Prosím zkuste to znovu z %{provider}.
       keybase:
         invalid_token: Tokeny Keybase jsou hashe podpisů a musí být 66 znaků dlouhé
         verification_failed: Keybase nerozpoznává tento token jako podpis uživatele %{kb_username} na Keybase. Prosím zkuste to znovu z Keybase.
+      wrong_user: Nelze vytvořit důkaz pro uživatele %{proving}, zatímco jste přihlášen/a jako %{current}. Přihlaste se jako %{proving} a zkuste to znovu.
     explanation_html: Zde můžete kryptograficky připojit vaše ostatní identity, například profil Keybase. To dovolí jiným lidem vám posílat šifrované zprávy a důvěřovat obsahu, který jim pošlete.
     i_am_html: Na %{service} jsem %{username}.
     identity: Identita
     inactive: Neaktivní
+    publicize_checkbox: 'A tootnout tohle:'
+    publicize_toot: 'Je to dokázáno! Na %{service} jsem %{username}: %{url}'
     status: Stav ověření
     view_proof: Zobrazit důkaz
   imports:
@@ -759,6 +777,7 @@ cs:
           quadrillion: bld
           thousand: tis
           trillion: bil
+          unit: ''
   pagination:
     newer: Novější
     next: Další
@@ -776,13 +795,14 @@ cs:
       too_few_options: musí mít více než jednu položku
       too_many_options: nesmí obsahovat více než %{max} položky
   preferences:
-    languages: Jazyky
     other: Ostatní
-    publishing: Publikování
-    web: Web
+    posting_defaults: Výchozí možnosti psaní
+    public_timelines: Veřejné časové osy
   relationships:
     activity: Aktivita účtu
     dormant: Nečinné
+    last_active: Naposledy aktivních
+    most_recent: Naposledy přidaných
     moved: Přesunuté
     mutual: Vzájemné
     primary: Primární
@@ -858,6 +878,9 @@ cs:
     revoke_success: Relace úspěšně zamítnuta
     title: Relace
   settings:
+    account: Účet
+    account_settings: Nastavení účtu
+    appearance: Vzhled
     authorized_apps: Autorizované aplikace
     back: Zpět na Mastodon
     delete: Smazání účtu
@@ -867,13 +890,13 @@ cs:
     featured_tags: Zvýrazněné hashtagy
     identity_proofs: Důkazy identity
     import: Import
+    import_and_export: Import a export
     migrate: Přesunutí účtu
     notifications: Oznámení
     preferences: Předvolby
+    profile: Profil
     relationships: Sledovaní a sledující
-    settings: Nastavení
-    two_factor_authentication: Dvoufaktorové ověřování
-    your_apps: Vaše aplikace
+    two_factor_authentication: Dvoufázové ověřování
   statuses:
     attached:
       description: 'Přiloženo: %{attached}'
@@ -947,7 +970,7 @@ cs:
 
       <h3 id="protect">Jak vaše informace chráníme?</h3>
 
-      <p>Implenentujeme různá bezpečnostní opatření pro udržování bezpečnosti vašich osobních dat, když zadáváte, odesíláte, či přistupujete k vašim osobním datům. Mimo jiné je vaše relace v prohlížeči, jakož i provoz mezi vašimi aplikacemi a API, zabezpečena pomocí SSL, a vaše heslo je hashováno pomocí silného jednosměrného algoritmu. Pro větší zabezpečení vašeho účtu můžete povolit dvoufaktorovou autentikaci.</p>
+      <p>Implenentujeme různá bezpečnostní opatření pro udržování bezpečnosti vašich osobních dat, když zadáváte, odesíláte, či přistupujete k vašim osobním datům. Mimo jiné je vaše relace v prohlížeči, jakož i provoz mezi vašimi aplikacemi a API, zabezpečena pomocí SSL, a vaše heslo je hashováno pomocí silného jednosměrného algoritmu. Pro větší zabezpečení vašeho účtu můžete povolit dvoufázové ověřování.</p>
 
       <hr class="spacer" />
 
@@ -1011,21 +1034,21 @@ cs:
       default: "%d. %b %Y, %H:%M"
       month: "%b %Y"
   two_factor_authentication:
-    code_hint: Pro potvrzení zadejte kód vygenerovaný vaší autentikační aplikací
-    description_html: Povolíte-li <strong>dvoufaktorové ověřování</strong>, budete při přihlášení potřebovat telefon, který vám vygeneruje přístupové tokeny, které musíte zadat.
+    code_hint: Pro potvrzení zadejte kód vygenerovaný vaší ověřovací aplikací
+    description_html: Povolíte-li <strong>dvoufázové ověřování</strong>, budete při přihlášení potřebovat telefon, který vám vygeneruje přístupové tokeny, které musíte zadat.
     disable: Zakázat
     enable: Povolit
-    enabled: Dvoufaktorové ověřování je povoleno
-    enabled_success: Dvoufaktorové ověřování bylo úspěšně povoleno
+    enabled: Dvoufázové ověřování je povoleno
+    enabled_success: Dvoufázové ověřování bylo úspěšně povoleno
     generate_recovery_codes: Vygenerovat záložní kódy
     instructions_html: "<strong>Naskenujte tento QR kód Google Authenticatorem nebo jinou TOTP aplikací na vašem telefonu</strong>. Od teď bude tato aplikace generovat tokeny, které budete muset zadat při přihlášení."
     lost_recovery_codes: Záložní kódy vám dovolí dostat se k vašemu účtu, pokud ztratíte telefon. Ztratíte-li záložní kódy, můžete je zde znovu vygenerovat. Vaše staré záložní kódy budou zneplatněny.
     manual_instructions: 'Nemůžete-li oskenovat QR kód a je potřeba ho zadat ručně, zde je tajemství v prostém textu:'
     recovery_codes: Záložní kódy pro obnovu
-    recovery_codes_regenerated: Záložní kódy byly úspěšně znovu vygenerované
+    recovery_codes_regenerated: Záložní kódy byly úspěšně znovu vygenerovány
     recovery_instructions_html: Ztratíte-li někdy přístup k vašemu telefonu, můžete k získání přístupu k účtu použít jeden ze záložních kódů. <strong>Uchovávejte tyto kódy v bezpečí</strong>. Můžete si je například vytisknout a uložit je mezi jiné důležité dokumenty.
     setup: Nastavit
-    wrong_code: Zadaný kód byl neplatný! Je serverový čas a čas na zařízení správný?
+    wrong_code: Zadaný kód byl neplatný! Je čas na serveru a na zařízení správný?
   user_mailer:
     backup_ready:
       explanation: Vyžádal/a jste si úplnou zálohu svého účtu Mastodon. Nyní je připravena ke stažení!
@@ -1051,8 +1074,8 @@ cs:
       edit_profile_action: Nastavit profil
       edit_profile_step: Můžete si přizpůsobit svůj profil nahráním avataru a obrázku záhlaví, změnou zobrazovaného jména a dalších. Chcete-li posoudit nové sledující předtím, než vás mohou sledovat, můžete svůj účet uzamknout.
       explanation: Zde je pár tipů na začátek
-      final_action: Začněte přispívat
-      final_step: 'Začněte psát! I když nemáte sledující, mohou vaše zprávy vidět jiní lidé, například na místní časové ose a mezi hashtagy. Můžete se ostatním představit pomocí hashtagu #introductions.'
+      final_action: Začít psát
+      final_step: 'Začněte psát! I když nemáte sledující, mohou vaše zprávy vidět jiní lidé, například na místní časové ose a v hashtazích. Můžete se ostatním představit pomocí hashtagu #introductions.'
       full_handle: Vaše celá adresa profilu
       full_handle_hint: Tohle je, co byste řekl/a svým přátelům, aby vám mohli posílat zprávy nebo vás sledovat z jiného serveru.
       review_preferences_action: Změnit nastavení
@@ -1067,7 +1090,7 @@ cs:
   users:
     follow_limit_reached: Nemůžete sledovat více než %{limit} lidí
     invalid_email: E-mailová adresa je neplatná
-    invalid_otp_token: Neplatný kód pro dvoufaktorovou autentikaci
+    invalid_otp_token: Neplatný kód pro dvoufázové ověřování
     otp_lost_help_html: Pokud jste ztratil/a přístup k oběma, můžete se spojit %{email}
     seamless_external_login: Jste přihlášen/a přes externí službu, nastavení hesla a e-mailu proto nejsou dostupná.
     signed_in_as: 'Přihlášen/a jako:'

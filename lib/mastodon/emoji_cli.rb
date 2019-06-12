@@ -15,9 +15,9 @@ module Mastodon
     option :suffix
     option :overwrite, type: :boolean
     option :unlisted, type: :boolean
-    desc 'import PATH', 'Import emoji from a TAR archive at PATH'
+    desc 'import PATH', 'Import emoji from a TAR GZIP archive at PATH'
     long_desc <<-LONG_DESC
-      Imports custom emoji from a TAR archive specified by PATH.
+      Imports custom emoji from a TAR GZIP archive specified by PATH.
 
       Existing emoji will be skipped unless the --overwrite option
       is provided, in which case they will be overwritten.
@@ -64,6 +64,12 @@ module Mastodon
 
       puts
       say("Imported #{imported}, skipped #{skipped}, failed to import #{failed}", color(imported, skipped, failed))
+    end
+
+    desc 'purge', 'Remove all custom emoji'
+    def purge
+      CustomEmoji.in_batches.destroy_all
+      say('OK', :green)
     end
 
     private

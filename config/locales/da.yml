@@ -432,7 +432,6 @@ da:
     warning: Vær meget forsigtig med disse data. Del dem aldrig med nogen!
     your_token: Din adgangs token
   auth:
-    agreement_html: Ved at oprette dig erklærer du dig enig i at følge <a href="%{rules_path}">serverens regler</a> og <a href="%{terms_path}">vores servicevilkår</a>.
     change_password: Kodeord
     confirm_email: Bekræft email
     delete_account: Slet konto
@@ -635,10 +634,7 @@ da:
     prev: Forrige
     truncate: "...&hellip;"
   preferences:
-    languages: Sprog
     other: Andet
-    publishing: Offentligører
-    web: Web
   remote_follow:
     acct: Indtast dit brugernavn@domæne du vil handle fra
     missing_resource: Kunne ikke finde det påkrævede omdirigerings link for din konto
@@ -701,9 +697,7 @@ da:
     migrate: Konto migrering
     notifications: Notifikationer
     preferences: Præferencer
-    settings: Indstillinger
     two_factor_authentication: To-faktor godkendelse
-    your_apps: Dine applikationer
   statuses:
     attached:
       description: 'Vedhæftede: %{attached}'

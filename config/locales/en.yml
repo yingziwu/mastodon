@@ -68,6 +68,7 @@ en:
       admin: Admin
       bot: Bot
       moderator: Mod
+    unavailable: Profile unavailable
     unfollow: Unfollow
   admin:
     account_actions:
@@ -80,6 +81,7 @@ en:
       destroyed_msg: Moderation note successfully destroyed!
     accounts:
       approve: Approve
+      approve_all: Approve all
       are_you_sure: Are you sure?
       avatar: Avatar
       by_domain: Domain
@@ -132,6 +134,7 @@ en:
       moderation_notes: Moderation notes
       most_recent_activity: Most recent activity
       most_recent_ip: Most recent IP
+      no_account_selected: No accounts were changed as none were selected
       no_limits_imposed: No limits imposed
       not_subscribed: Not subscribed
       outbox_url: Outbox URL
@@ -144,6 +147,7 @@ en:
       push_subscription_expires: PuSH subscription expires
       redownload: Refresh profile
       reject: Reject
+      reject_all: Reject all
       remove_avatar: Remove avatar
       remove_header: Remove header
       resend_confirmation:
@@ -170,6 +174,7 @@ en:
       statuses: Statuses
       subscribe: Subscribe
       suspended: Suspended
+      time_in_queue: Waiting in queue %{time}
       title: Accounts
       unconfirmed_email: Unconfirmed email
       undo_silenced: Undo silence
@@ -265,6 +270,7 @@ en:
       created_msg: Domain block is now being processed
       destroyed_msg: Domain block has been undone
       domain: Domain
+      existing_domain_block_html: You have already imposed stricter limits on %{name}, you need to <a href="%{unblock_url}">unblock it</a> first.
       new:
         create: Create block
         hint: The domain block will not prevent creation of account entries in the database, but will retroactively and automatically apply specific moderation methods on those accounts.
@@ -288,8 +294,8 @@ en:
           one: One account in the database affected
           other: "%{count} accounts in the database affected"
         retroactive:
-          silence: Unsilence all existing accounts from this domain
-          suspend: Unsuspend all existing accounts from this domain
+          silence: Unsilence existing affected accounts from this domain
+          suspend: Unsuspend existing affected accounts from this domain
         title: Undo domain block for %{domain}
         undo: Undo
       undo: Undo domain block
@@ -330,6 +336,8 @@ en:
         expired: Expired
         title: Filter
       title: Invites
+    pending_accounts:
+      title: Pending accounts (%{count})
     relays:
       add_new: Add new relay
       delete: Delete
@@ -491,12 +499,18 @@ en:
       body: "%{reporter} has reported %{target}"
       body_remote: Someone from %{domain} has reported %{target}
       subject: New report for %{instance} (#%{id})
+  appearance:
+    advanced_web_interface: Advanced web interface
+    advanced_web_interface_hint: 'If you want to make use of your entire screen width, the advanced web interface allows you to configure many different columns to see as much information at the same time as you want: Home, notifications, federated timeline, any number of lists and hashtags.'
+    animations_and_accessibility: Animations and accessibility
+    confirmation_dialogs: Confirmation dialogs
+    sensitive_content: Sensitive content
   application_mailer:
     notification_preferences: Change e-mail preferences
     salutation: "%{name},"
     settings: 'Change e-mail preferences: %{link}'
     view: 'View:'
-    view_profile: View Profile
+    view_profile: View profile
     view_status: View status
   applications:
     created: Application successfully created
@@ -507,7 +521,6 @@ en:
     warning: Be very careful with this data. Never share it with anyone!
     your_token: Your access token
   auth:
-    agreement_html: By clicking "Sign up" below you agree to follow <a href="%{rules_path}">the rules of the server</a> and <a href="%{terms_path}">our terms of service</a>.
     apply_for_account: Request an invite
     change_password: Password
     checkbox_agreement_html: I agree to the <a href="%{rules_path}" target="_blank">server rules</a> and <a href="%{terms_path}" target="_blank">terms of service</a>
@@ -633,6 +646,7 @@ en:
     all: All
     changes_saved_msg: Changes successfully saved!
     copy: Copy
+    order_by: Order by
     save_changes: Save changes
     validation_errors:
       one: Something isn't quite right yet! Please review the error below
@@ -648,10 +662,13 @@ en:
       keybase:
         invalid_token: Keybase tokens are hashes of signatures and must be 66 hex characters
         verification_failed: Keybase does not recognize this token as a signature of Keybase user %{kb_username}. Please retry from Keybase.
+      wrong_user: Cannot create a proof for %{proving} while logged in as %{current}. Log in as %{proving} and try again.
     explanation_html: Here you can cryptographically connect your other identities, such as a Keybase profile. This lets other people send you encrypted messages and trust content you send them.
     i_am_html: I am %{username} on %{service}.
     identity: Identity
     inactive: Inactive
+    publicize_checkbox: 'And toot this:'
+    publicize_toot: 'It is proven! I am %{username} on %{service}: %{url}'
     status: Verification status
     view_proof: View proof
   imports:
@@ -767,10 +784,9 @@ en:
       too_few_options: must have more than one item
       too_many_options: can't contain more than %{max} items
   preferences:
-    languages: Languages
     other: Other
-    publishing: Publishing
-    web: Web
+    posting_defaults: Posting defaults
+    public_timelines: Public timelines
   relationships:
     activity: Account activity
     dormant: Dormant
@@ -851,6 +867,9 @@ en:
     revoke_success: Session successfully revoked
     title: Sessions
   settings:
+    account: Account
+    account_settings: Account settings
+    appearance: Appearance
     authorized_apps: Authorized apps
     back: Back to Mastodon
     delete: Account deletion
@@ -860,13 +879,13 @@ en:
     featured_tags: Featured hashtags
     identity_proofs: Identity proofs
     import: Import
+    import_and_export: Import and export
     migrate: Account migration
     notifications: Notifications
     preferences: Preferences
+    profile: Profile
     relationships: Follows and followers
-    settings: Settings
     two_factor_authentication: Two-factor Auth
-    your_apps: Your applications
   statuses:
     attached:
       description: 'Attached: %{attached}'
