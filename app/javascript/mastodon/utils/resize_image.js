@@ -1,6 +1,6 @@
 import EXIF from 'exif-js';
 
-const MAX_IMAGE_PIXELS = 3686400; //1920x1920px
+const MAX_IMAGE_PIXELS = 8847360; //4096x2160px
 
 const getImageUrl = inputFile => new Promise((resolve, reject) => {
   if (window.URL && URL.createObjectURL) {
