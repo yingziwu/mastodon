@@ -17,7 +17,7 @@ module Mastodon
     end
 
     def flags
-      ''
+      '~bgme'
     end
 
     def suffix
@@ -33,7 +33,7 @@ module Mastodon
     end
 
     def repository
-      ENV.fetch('GITHUB_REPOSITORY') { 'tootsuite/mastodon' }
+      ENV.fetch('GITHUB_REPOSITORY') { 'yingziwu/mastodon' }
     end
 
     def source_base_url
