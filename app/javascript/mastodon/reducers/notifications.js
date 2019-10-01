@@ -90,12 +90,8 @@ const expandNormalizedNotifications = (state, notifications, next, isLoadingRece
 };
 
 const filterNotifications = (state, accountIds) => {
-<<<<<<< HEAD
-  return state.update('items', list => list.filterNot(item => item !== null && accountIds.includes(item.get('account'))));
-=======
   const helper = list => list.filterNot(item => item !== null && accountIds.includes(item.get('account')));
   return state.update('items', helper).update('pendingItems', helper);
->>>>>>> v3.0.0rc2
 };
 
 const updateTop = (state, top) => {
