@@ -17,7 +17,7 @@ module Mastodon
     end
 
     def flags
-      'rc2 ~bgme'
+      ' ~bgme'
     end
 
     def suffix
