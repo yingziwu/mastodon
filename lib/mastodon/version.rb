@@ -9,15 +9,15 @@ module Mastodon
     end
 
     def minor
-      0
-    end
-
-    def patch
       1
     end
 
+    def patch
+      0
+    end
+
     def flags
-      ' ~bgme'
+      'rc2 ~bgme'
     end
 
     def suffix
