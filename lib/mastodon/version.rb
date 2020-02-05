@@ -17,11 +17,11 @@ module Mastodon
     end
 
     def flags
-      'rc2 ~bgme'
+      'rc2'
     end
 
     def suffix
-      ''
+      '~bgme'
     end
 
     def to_a
