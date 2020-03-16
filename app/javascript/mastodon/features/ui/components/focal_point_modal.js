@@ -224,11 +224,15 @@ class FocalPointModal extends ImmutablePureComponent {
         }
       }
 
-      worker.recognize(media_url)
-        .progress(({ progress }) => this.setState({ progress }))
-        .finally(() => worker.terminate())
-        .then(({ text }) => this.setState({ description: removeExtraLineBreaks(text), dirty: true, detecting: false }))
-        .catch(() => this.setState({ detecting: false }));
+      (async () => {
+        await worker.loadLanguage('eng+chi_sim+chi_sim_vert+chi_tra+chi_tra_vert');
+        await worker.initialize('eng+chi_sim+chi_tra');
+        worker.recognize(media_url)
+          .progress(({ progress }) => this.setState({ progress }))
+          .finally(() => worker.terminate())
+          .then(({ text }) => this.setState({ description: removeExtraLineBreaks(text), dirty: true, detecting: false }))
+          .catch(() => this.setState({ detecting: false }));
+      })();
     }).catch(() => this.setState({ detecting: false }));
   }
 
