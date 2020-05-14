@@ -4,9 +4,8 @@ class REST::InstanceSerializer < ActiveModel::Serializer
   include RoutingHelper
 
   attributes :uri, :title, :short_description, :description, :email,
-             :version, :urls, :stats, :thumbnail,
-             :languages, :registrations, :approval_required,
-             :max_toot_chars
+             :version, :urls, :stats, :thumbnail, :max_toot_chars,
+             :languages, :registrations, :approval_required, :invites_enabled
 
   has_one :contact_account, serializer: REST::AccountSerializer
 
@@ -66,6 +65,10 @@ class REST::InstanceSerializer < ActiveModel::Serializer
 
   def approval_required
     Setting.registrations_mode == 'approved'
+  end
+
+  def invites_enabled
+    Setting.min_invite_role == 'user'
   end
 
   private
