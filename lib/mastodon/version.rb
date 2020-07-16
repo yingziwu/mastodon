@@ -9,15 +9,19 @@ module Mastodon
     end
 
     def minor
-      1
+      2
     end
 
     def patch
+<<<<<<< HEAD
       5
+=======
+      0
+>>>>>>> v3.2.0rc1
     end
 
     def flags
-      ''
+      'rc1'
     end
 
     def suffix
