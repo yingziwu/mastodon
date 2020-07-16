@@ -13,11 +13,7 @@ module Mastodon
     end
 
     def patch
-<<<<<<< HEAD
-      5
-=======
       0
->>>>>>> v3.2.0rc1
     end
 
     def flags
