@@ -72,7 +72,7 @@ $about-page-text: lighten($ui-base-color, 50%);
 }
 
 .landing-page.alternative .header {
-    background-image:url('../themes/neoncity/images/header-cybre-colour.jpg');
+    background-image:url('../images/neoncity/header-cybre-colour.jpg');
     background-repeat: repeat-x;
     background-size:contain;
     height:45vh;
@@ -276,7 +276,7 @@ $about-page-text: lighten($ui-base-color, 50%);
 }
 
 body, .landing-page, .public-layout {
-  background-image: url("../themes/swan-lake.jpg");
+  background-image: url("../images/swan-lake.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
