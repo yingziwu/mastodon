@@ -7,7 +7,6 @@ witches-town: styles/witches-town.scss
 strawberry: styles/strawberry.scss
 neoncity: styles/neon-city.scss
 swan-lake: styles/swan-lake.scss
-cybre-light: styles/cybre-light.scss
 cyberpunk-neon: styles/cyberpunk-neon.scss
 meemu-org: styles/meemu.scss
 sakura: styles/sakura.scss
@@ -23,6 +22,5 @@ luxury: styles/luxury.scss
 purple-haze: styles/purple-haze.scss
 ubuntu-terminal: styles/ubuntu-terminal.scss
 cybrespace: styles/cybre.scss
-cybrespace-light: styles/cybre-light.scss
 win95: styles/win95.scss
 
