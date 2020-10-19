@@ -23,3 +23,6 @@ luxury: styles/luxury.scss
 purple-haze: styles/purple-haze.scss
 ubuntu-terminal: styles/ubuntu-terminal.scss
 cybrespace: styles/cybre.scss
+cybrespace-light: styles/cybre-light.scss
+win95: styles/win95.scss
+

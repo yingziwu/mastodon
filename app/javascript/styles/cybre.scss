@@ -1,4 +1,4 @@
-$ui-base-color: #181818; // darkest
+$ui-base-color: #1b1b1b; // darkest
 $ui-highlight-color: #1ea21e; // vibrant
 $ui-secondary-color: #E4F2E4; // lightest
 $ui-primary-color: #E4F2E4; // lighter
@@ -22,6 +22,7 @@ $about-page-text: lighten($ui-base-color, 50%);
 
 body, body.about-body {
   background: $ui-base-color url('../images/background-cybre.png');
+  background-attachment: fixed;
 }
 
 body.about-body {
@@ -271,12 +272,7 @@ body.about-body {
   }
 }
 
-/* Octagonal avatars, because ???? */
-.account__avatar,
-.account__avatar-overlay-base,
-.account__header__avatar,
-.account__avatar-overlay-overlay {
-    border-radius:0px !important;
-    -webkit-clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%);
-    clip-path: polygon(25% 0, 75% 0, 100% 25%, 100% 75%, 75% 100%, 25% 100%, 0 75%, 0 25%);
+.status__content a,
+.status__content a.unhandled-link {
+  color: mix($ui-highlight-color, $ui-secondary-color, 10%);
 }
