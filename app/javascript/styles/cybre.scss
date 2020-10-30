@@ -21,13 +21,13 @@ $about-page-text: lighten($ui-base-color, 50%);
 }
 
 body, body.about-body {
-  background: $ui-base-color url('../images/background-cybre.png');
+  background: $ui-base-color url('../images/cybre/background-cybre.png');
   background-attachment: fixed;
 }
 
 body.about-body {
   // basics.scss &.about-body
-  background: darken($ui-base-color, 8%) url('../images/background-cybre.png');
+  background: darken($ui-base-color, 8%) url('../images/cybre/background-cybre.png');
 
   background-position-y: 200px;
   background-position-x: center;
@@ -63,14 +63,14 @@ body.about-body {
 }
 
 .column .static-content.getting-started {
-  background-image: url('../images/logo-cybre.png'), url('../images/background-cybre.png');
+  background-image: url('../images/cybre/logo-cybre.png'), url('../images/cybre/background-cybre.png');
   background-size:auto 50%, cover;
   background-position: 50% 75%, center center;
   background-repeat:no-repeat, no-repeat;
 }
 
 .columns-area {
-  background: $ui-base-color url('../images/background-cybre.png');
+  background: $ui-base-color url('../images/cybre/background-cybre.png');
 }
 
 .actions .button.button-alternative {
@@ -91,7 +91,7 @@ body.about-body {
 }
 
 .landing-page.alternative .header {
-    background-image:url('../images/header-cybre-colour.jpg');
+    background-image:url('../images/cybre/header-cybre-colour.jpg');
     background-repeat: repeat-x;
     background-size:contain;
     height:45vh;
