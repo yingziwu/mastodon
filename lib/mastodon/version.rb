@@ -33,11 +33,7 @@ module Mastodon
     end
 
     def repository
-<<<<<<< HEAD
-      ENV.fetch('GITHUB_REPOSITORY') { 'yingziwu/mastodon' }
-=======
-      ENV.fetch('GITHUB_REPOSITORY', 'mastodon/mastodon')
->>>>>>> upstream/main
+      ENV.fetch('GITHUB_REPOSITORY', 'yingziwu/mastodon')
     end
 
     def source_base_url
