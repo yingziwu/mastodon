@@ -35,8 +35,6 @@ gd:
         current_password: A chùm tèarainteachd, cuir a-steach facal-faire a’ chunntais làithrich
         current_username: Airson seo a dhearbhadh, cuir a-steach ainm-cleachdaiche a’ chunntais làithrich
         digest: Cha dèid seo a chur ach nuair a bhios tu air ùine mhòr gun ghnìomh a ghabhail agus ma fhuair thu teachdaireachd phearsanta fhad ’s a bha thu air falbh
-        discoverable: Ceadaich gun lorg coigrich an cunntas agad le taic o mholaidhean is gleusan eile
-        discoverable_no_directory: Ceadaich gun lorg coigrich an cunntas agad le taic o mholaidhean is gleusan eile
         email: Thèid post-d dearbhaidh a chur thugad
         fields: Faodaidh tu suas ri 4 nithean a shealltainn mar chlàr air a’ phròifil agad
         header: PNG, GIF or JPG. %{size} air a char as motha. Thèid a sgèileadh sìos gu %{dimensions}px
@@ -62,7 +60,6 @@ gd:
       domain_allow:
         domain: "’S urrainn dhan àrainn seo dàta fhaighinn on fhrithealaiche seo agus thèid an dàta a thig a-steach uaithe a phròiseasadh ’s a stòradh"
       email_domain_block:
-        domain: Gabhaidh an t-ainm àrainne a nochdas san t-seòladh puist-d a chleachdadh no an clàr MX dhan dèid an àrainn fhuasgladh no IP an fhrithealaiche dhan dèid an clàr MX fuasgladh. Thèid an dearbhadh nuair a chlàraicheas cleachdaiche ùr leinn is thèid an clàradh a dhiùltadh.
         with_dns_records: Thèid oidhirp a dhèanamh air fuasgladh clàran DNS na h-àrainne a chaidh a thoirt seachad agus thèid na toraidhean a bhacadh cuideachd
       featured_tag:
         name: 'Mholamaid fear dhe na tagaichean seo:'
@@ -110,7 +107,7 @@ gd:
           disable: Reòth
           none: Cuir rabhadh
           sensitive: Frionasach
-          silence: Crìoch
+          silence: Cuingich
           suspend: Cuir à rèim
         warning_preset_id: Cleachd rabhadh ro-shuidhichte
       announcement:
@@ -182,8 +179,8 @@ gd:
       featured_tag:
         name: Taga hais
       interactions:
-        must_be_follower: Mùch na brathan nach eil o luchd-leantainn
-        must_be_following: Mùch na brathan o dhaoine air nach lean thu
+        must_be_follower: Bac na brathan nach eil o luchd-leantainn
+        must_be_following: Bac na brathan o dhaoine air nach lean thu
         must_be_following_dm: Bac teachdaireachdan dìreach o dhaoine air nach lean thu
       invite:
         comment: Beachd
@@ -204,8 +201,6 @@ gd:
         mention: Thug cuideigin iomradh ort
         pending_account: Tha cunntas ùr feumach air lèirmheas
         reblog: Bhrosnaich cuideigin am post agad
-        report: Chaidh gearan ùr a chur a-null
-        trending_tag: Tha taga hais gun lèirmheas a’ treandadh
       rule:
         text: Riaghailt
       tag:
