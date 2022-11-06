@@ -11,7 +11,7 @@ namespace :mastodon do
     # When the application code gets loaded, it runs `lib/mastodon/redis_configuration.rb`.
     # This happens before application environment configuration and sets REDIS_URL etc.
     # These variables are then used even when REDIS_HOST etc. are changed, so clear them
-    # out so they don't interfer with our new configuration.
+    # out so they don't interfere with our new configuration.
     ENV.delete('REDIS_URL')
     ENV.delete('CACHE_REDIS_URL')
     ENV.delete('SIDEKIQ_REDIS_URL')
@@ -433,8 +433,11 @@ namespace :mastodon do
 
           password = SecureRandom.hex(16)
 
-          user = User.new(admin: true, email: email, password: password, confirmed_at: Time.now.utc, account_attributes: { username: username }, bypass_invite_request_check: true)
+          owner_role = UserRole.find_by(name: 'Owner')
+          user = User.new(email: email, password: password, confirmed_at: Time.now.utc, account_attributes: { username: username }, bypass_invite_request_check: true, role: owner_role)
           user.save(validate: false)
+
+          Setting.site_contact_username = username
 
           prompt.ok "You can login with the password: #{password}"
           prompt.warn 'You can change your password once you login.'
