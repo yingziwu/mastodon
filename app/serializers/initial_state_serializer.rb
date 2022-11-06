@@ -5,7 +5,7 @@ class InitialStateSerializer < ActiveModel::Serializer
 
   attributes :meta, :compose, :accounts,
              :media_attachments, :settings,
-             :languages, :max_toot_chars
+             :languages
 
   has_one :push_subscription, serializer: REST::WebPushSubscriptionSerializer
   has_one :role, serializer: REST::RoleSerializer
@@ -79,6 +79,7 @@ class InitialStateSerializer < ActiveModel::Serializer
     end
 
     store[:text] = object.text if object.text
+    store[:max_characters] = StatusLengthValidator::MAX_CHARS
 
     store
   end
