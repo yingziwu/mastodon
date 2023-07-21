@@ -3,6 +3,34 @@ Changelog
 
 All notable changes to this project will be documented in this file.
 
+## [4.1.5] - 2023-07-21
+
+### Added
+
+- Add check preventing Sidekiq workers from running with Makara configured ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25850))
+
+### Changed
+
+- Change request timeout handling to use a longer deadline ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26055))
+
+### Fixed
+
+- Fix moderation interface for remote instances with a .zip TLD ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25886))
+- Fix remote accounts being possibly persisted to database with incomplete protocol values ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25886))
+- Fix trending publishers table not rendering correctly on narrow screens ([vmstan](https://github.com/mastodon/mastodon/pull/25945))
+
+### Security
+
+- Fix CSP headers being unintentionally wide ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/26105))
+
+## [4.1.4] - 2023-07-07
+
+### Fixed
+
+- Fix branding:generate_app_icons failing because of disallowed ICO coder ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25794))
+- Fix crash in admin interface when viewing a remote user with verified links ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25796))
+- Fix processing of media files with unusual names ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25788))
+
 ## [4.1.3] - 2023-07-06
 
 ### Added
@@ -30,7 +58,7 @@ All notable changes to this project will be documented in this file.
 - Fix multiple inefficiencies in automatic post cleanup worker ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/24607), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/24785), [ClearlyClaire](https://github.com/mastodon/mastodon/pull/24840))
 - Fix performance of streaming by parsing message JSON once ([ThisIsMissEm](https://github.com/mastodon/mastodon/pull/25278), [ThisIsMissEm](https://github.com/mastodon/mastodon/pull/25361))
 - Fix CSP headers when `S3_ALIAS_HOST` includes a path component ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25273))
-- Fix `tootctl accounts approve --number N` not aproving N earliest registrations ([danielmbrasil](https://github.com/mastodon/mastodon/pull/24605))
+- Fix `tootctl accounts approve --number N` not approving N earliest registrations ([danielmbrasil](https://github.com/mastodon/mastodon/pull/24605))
 - Fix reports not being closed when performing batch suspensions ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/24988))
 - Fix being able to vote on your own polls ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25015))
 - Fix race condition when reblogging a status ([ClearlyClaire](https://github.com/mastodon/mastodon/pull/25016))
