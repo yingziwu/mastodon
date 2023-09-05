@@ -56,10 +56,10 @@ class SearchQueryTransformer < Parslet::Transform
 
     def indexes
       case @flags['in']
-      when 'library'
-        [StatusesIndex]
-      else
+      when 'public'
         [PublicStatusesIndex, StatusesIndex]
+      else
+        [StatusesIndex]
       end
     end
 
