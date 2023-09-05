@@ -18,6 +18,7 @@ class StatusesIndex < Chewy::Index
         language: 'possessive_english',
       },
     },
+
     char_filter: {
       tsconvert: {
         type: 'stconvert',
