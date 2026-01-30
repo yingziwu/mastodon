@@ -25,12 +25,26 @@ class AccountsIndex < Chewy::Index
         output_unigrams: true,
         token_separator: '',
       },
+
+      tsconvert: {
+        type: "stconvert",
+        delimiter: "#",
+        keep_both: false,
+        convert_type: "t2s"
+      }
+    },
+
+    char_filter: {
+      tsconvert: {
+        type: 'stconvert',
+        convert_type: 't2s',
+      },
     },
 
     analyzer: {
       # "The FOOING's bar" becomes "foo bar"
       natural: {
-        tokenizer: 'standard',
+        tokenizer: 'ik_max_word',
         filter: %w(
           lowercase
           asciifolding
@@ -40,12 +54,14 @@ class AccountsIndex < Chewy::Index
           english_stop
           english_stemmer
         ),
+        char_filter: %w(tsconvert),
       },
 
       # "FOO bar" becomes "foo bar"
       verbatim: {
-        tokenizer: 'standard',
+        tokenizer: 'ik_max_word',
         filter: %w(lowercase asciifolding cjk_width),
+        char_filter: %w(tsconvert),
       },
 
       # "Foo bar" becomes "foo bar foobar"
