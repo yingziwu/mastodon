@@ -4,6 +4,22 @@ class TagsIndex < Chewy::Index
   include DatetimeClampingConcern
 
   settings index: index_preset(refresh_interval: '30s'), analysis: {
+    filter: {
+      tsconvert: {
+        type: "stconvert",
+        delimiter: "#",
+        keep_both: false,
+        convert_type: "t2s"
+      }
+    },
+
+    char_filter: {
+      tsconvert: {
+        type: 'stconvert',
+        convert_type: 't2s',
+      },
+    },
+
     analyzer: {
       content: {
         tokenizer: 'keyword',
@@ -13,6 +29,7 @@ class TagsIndex < Chewy::Index
           asciifolding
           cjk_width
         ),
+        char_filter: %w(tsconvert),
       },
 
       edge_ngram: {
@@ -22,6 +39,7 @@ class TagsIndex < Chewy::Index
           asciifolding
           cjk_width
         ),
+        char_filter: %w(tsconvert),
       },
     },
 

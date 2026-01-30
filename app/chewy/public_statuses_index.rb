@@ -19,6 +19,20 @@ class PublicStatusesIndex < Chewy::Index
         type: 'stemmer',
         language: 'possessive_english',
       },
+
+      tsconvert: {
+        type: "stconvert",
+        delimiter: "#",
+        keep_both: false,
+        convert_type: "t2s"
+      }
+    },
+
+    char_filter: {
+      tsconvert: {
+        type: 'stconvert',
+        convert_type: 't2s',
+      },
     },
 
     analyzer: {
@@ -28,7 +42,7 @@ class PublicStatusesIndex < Chewy::Index
       },
 
       content: {
-        tokenizer: 'standard',
+        tokenizer: 'ik_max_word',
         filter: %w(
           lowercase
           asciifolding
@@ -38,6 +52,21 @@ class PublicStatusesIndex < Chewy::Index
           english_stop
           english_stemmer
         ),
+        char_filter: %w(tsconvert),
+      },
+
+      content_search: {
+        tokenizer: 'ik_smart',
+        filter: %w(
+          lowercase
+          asciifolding
+          cjk_width
+          elision
+          english_possessive_stemmer
+          english_stop
+          english_stemmer
+        ),
+        char_filter: %w(tsconvert),
       },
 
       hashtag: {
@@ -48,6 +77,7 @@ class PublicStatusesIndex < Chewy::Index
           asciifolding
           cjk_width
         ),
+        char_filter: %w(tsconvert),
       },
     },
   }
@@ -60,7 +90,7 @@ class PublicStatusesIndex < Chewy::Index
   root date_detection: false do
     field(:id, type: 'long')
     field(:account_id, type: 'long')
-    field(:text, type: 'text', analyzer: 'verbatim', value: ->(status) { status.searchable_text }) { field(:stemmed, type: 'text', analyzer: 'content') }
+    field(:text, type: 'text', analyzer: 'verbatim', value: ->(status) { status.searchable_text }) { field(:stemmed, type: 'text', analyzer: 'content', search_analyzer: 'content_search') }
     field(:tags, type: 'text', analyzer: 'hashtag', value: ->(status) { status.tags.map(&:display_name) })
     field(:language, type: 'keyword')
     field(:properties, type: 'keyword', value: ->(status) { status.searchable_properties })
