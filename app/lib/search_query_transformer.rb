@@ -60,8 +60,10 @@ class SearchQueryTransformer < Parslet::Transform
         [StatusesIndex]
       when 'public'
         [PublicStatusesIndex]
-      else
+      when 'all'
         [PublicStatusesIndex, StatusesIndex]
+      else
+        [StatusesIndex]
       end
     end
 
