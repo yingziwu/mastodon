@@ -55,13 +55,11 @@ export const FocusTargetProvider: React.FC<{
     | null
   >(null);
 
-  const {
-    pathname,
-    search,
-    state = {},
-  } = useLocation<{ focusTarget?: FocusTarget } | undefined>();
+  const { pathname, search, state } = useLocation<{
+    focusTarget?: FocusTarget;
+  } | null>();
 
-  const { focusTarget } = state;
+  const { focusTarget } = state ?? {};
 
   useLayoutEffect(() => {
     // We never want to set focus on page load, so we keep
@@ -102,15 +100,9 @@ export const FocusTargetProvider: React.FC<{
 export function useFocusOnNavigation(targetName?: string) {
   const focusTargetRef = useContext(FocusTargetContext);
 
-  if (focusTargetRef === null) {
-    throw Error(
-      'useFocusTargetContext must be used inside of a FocusTargetProvider',
-    );
-  }
-
   return useCallback(
     (element: HTMLElement | null) => {
-      const focusTarget = focusTargetRef.current;
+      const focusTarget = focusTargetRef?.current;
 
       // Bail out if focusTarget was set to `false`
       if (!element || !focusTarget) {
